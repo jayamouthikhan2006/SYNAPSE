@@ -3,6 +3,6 @@
   "outputDirectory": "frontend/dist",
   "functions": { "api/index.py": { "maxDuration": 60, "includeFiles": "backend/**" } },
   "rewrites": [
-    { "source": "/((?!api/|assets/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|assets/|synapse-ad).*)", "destination": "/index.html" }
   ]
 }
