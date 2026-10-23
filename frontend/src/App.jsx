@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
-import { Activity, BarChart3, Bell, Building2, FileSearch, FilePlus2, Gauge, Layers, Menu, MessageSquareWarning, PlayCircle, ScrollText, Search, ShieldAlert, Swords, Users2, X } from 'lucide-react'
+import { Activity, BarChart3, Bell, Building2, FileSearch, FilePlus2, Gauge, Layers, Menu, MessageSquareWarning, PlayCircle, Clapperboard, ScrollText, Search, ShieldAlert, Swords, Users2, X } from 'lucide-react'
 import { useApp } from './ctx'
 import { useApi } from './api'
 import { Spinner, Toast, cx } from './ui'
@@ -21,6 +21,7 @@ import FileComplaint from './pages/FileComplaint'
 import Track from './pages/Track'
 import Ledger from './pages/Ledger'
 import DemoGuide from './pages/DemoGuide'
+import Film from './pages/Film'
 
 const NAV = [
   { group: 'Overview', items: [{ to: '/', label: 'Dashboard', icon: Gauge, end: true }] },
@@ -39,6 +40,7 @@ const NAV = [
   ] },
   { group: 'Trust', items: [
     { to: '/ledger', label: 'Audit Ledger', icon: ScrollText },
+    { to: '/film', label: 'Watch the Film', icon: Clapperboard },
     { to: '/demo', label: 'Demo Guide', icon: PlayCircle },
   ] },
 ]
@@ -198,6 +200,7 @@ export default function App() {
             <Route path="/track" element={<Track />} />
             <Route path="/track/:pid" element={<Track />} />
             <Route path="/ledger" element={<Ledger />} />
+            <Route path="/film" element={<Film />} />
             <Route path="/demo" element={<DemoGuide />} />
             <Route path="*" element={<div className="py-20 text-center text-ink-soft">Page not found</div>} />
           </Routes>

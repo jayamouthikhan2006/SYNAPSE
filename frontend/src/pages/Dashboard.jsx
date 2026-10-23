@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { ArrowRight, Building2, Clock, FileWarning, MessageSquareWarning, ShieldAlert, ShieldCheck, Swords, VolumeX } from 'lucide-react'
+import { Play, ArrowRight, Building2, Clock, FileWarning, MessageSquareWarning, ShieldAlert, ShieldCheck, Swords, VolumeX } from 'lucide-react'
 import { useApi } from '../api'
 import { useApp } from '../ctx'
 import { Badge, Card, Chart, ErrorBox, PageHeader, RiskBadge, Select, Spinner, Stat, StatusBadge, ago, num } from '../ui'
@@ -54,6 +54,7 @@ export default function Dashboard() {
   return (
     <div>
       <PageHeader title={`${t('Welcome')}, ${roleName}`} hint="All bureaus' complaints and actions, grouped by college. Start with what needs attention.">
+        <Link to="/film" className="btn-primary"><Play size={16} /> Watch the film</Link>
         <div className="text-right text-xs text-ink-soft">{new Date().toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}</div>
       </PageHeader>
 

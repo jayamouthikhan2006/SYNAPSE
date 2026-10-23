@@ -514,7 +514,7 @@ MD.overlays.push(t=>X.flash(t,bar(35),{dur:.1,color:C.ice,max:.5}));
 // KINETIC DROP (bars 35–37) — a hard cut on every 8th note
 // =====================================================================================================
 const K0=bar(35);const KW=[
-  {w:'SEE',bg:C.saff,col:C.ink,size:420,fx:'slam'},{w:'EVERY',bg:C.night,col:C.ice,size:250,fx:'vert'},{w:'CASE',bg:C.ice,col:C.brand,size:380,fx:'scramble',len:2},
+  {w:'SEE',bg:C.saff,col:C.ink,size:420,fx:'slam'},{w:'EVERY',bg:C.night,col:C.ice,size:330,fx:'vert'},{w:'CASE',bg:C.ice,col:C.brand,size:380,fx:'scramble',len:2},
   {w:'EVERY',bg:C.teal,col:C.ink,size:300,fx:'marquee'},{w:'BUREAU',bg:C.alert,col:C.ice,size:280,fx:'punch'},{w:'ONE',bg:C.navy,col:C.saff,size:440,fx:'spin'},
   {w:'GRAPH',bg:C.brand,col:C.ice,size:330,fx:'bounce'},{w:'CATCH',bg:C.ice,col:C.ink,size:320,fx:'slide'},{w:'THE',bg:C.night,col:C.teal,size:420,fx:'pop'},
   {w:'CLASH',bg:C.alert,col:C.ice,size:340,fx:'slam',len:2},{w:'BEFORE',bg:C.saff,col:C.ink,size:270,fx:'arc'},{w:'IT',bg:C.night,col:C.ice,size:600,fx:'punch'},
@@ -525,7 +525,7 @@ let kt=K0;const KCUTS=[];KW.forEach((wd,i)=>{const len=(wd.len||1)*e8,st=kt;kt+=
       s.w=MD.word(h,wd.w,{cls:'f-unb',size:wd.size,y:540,color:wd.col,mask:!['bounceOut','arc','spin','pop'].includes(wd.fx)});fit(s.w,1720);},
     update(t,s){const L=s.w.letters;
       if(wd.fx==='slam'){T.slam(L,t,{stagger:.014,dur:.1,dist:900});T.rgbSplit(s.w,t,{at:.1,dur:.16,dist:34,a:C.teal,b:wd.bg===C.alert?C.saff:C.alert});}
-      if(wd.fx==='vert'){s.w.style.transform='translateY(-50%) rotate(-90deg)';T.flip(L,t,{stagger:.02,dur:.15});}
+      if(wd.fx==='vert'){T.flip(L,t,{stagger:.02,dur:.15});}
       if(wd.fx==='scramble')T.scramble(L,t,wd.w,{at:0,dur:.2,set:'#%&@*+=/<>01'});
       if(wd.fx==='marquee')s.w.style.transform=`translateY(-50%) rotate(-7deg) translateX(${-200-t*2800}px)`;
       if(wd.fx==='punch')T.punch(s.w,t,{dur:.24,from:.08});
