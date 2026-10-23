@@ -3,7 +3,14 @@ import os
 import sqlite3
 from contextlib import contextmanager
 
-DB_PATH = os.environ.get("SYNAPSE_DB", os.path.join(os.path.dirname(os.path.dirname(__file__)), "synapse.db"))
+_BUNDLED = os.path.join(os.path.dirname(os.path.dirname(__file__)), "synapse.db")
+DB_PATH = os.environ.get("SYNAPSE_DB", _BUNDLED)
+if os.environ.get("VERCEL") and not os.environ.get("SYNAPSE_DB"):
+    # serverless filesystem is read-only except /tmp: start from the pre-seeded database shipped with the code
+    import shutil
+    DB_PATH = "/tmp/synapse.db"
+    if not os.path.exists(DB_PATH) and os.path.exists(_BUNDLED):
+        shutil.copy(_BUNDLED, DB_PATH)
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS parents(
