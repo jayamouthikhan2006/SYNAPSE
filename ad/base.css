@@ -1,0 +1,39 @@
+@font-face{font-family:MDWide;src:url(fonts/archivo.woff2) format('woff2');font-weight:100 900;font-stretch:62% 125%;}
+@font-face{font-family:MDSerif;src:url(fonts/serif-italic.woff2) format('woff2');font-style:italic;}
+@font-face{font-family:MDMono;src:url(fonts/mono.woff2) format('woff2');font-weight:100 800;}
+@font-face{font-family:MDAnton;src:url(fonts/anton.woff2) format('woff2');}
+@font-face{font-family:MDGrot;src:url(fonts/grotesk.woff2) format('woff2');font-weight:300 700;}
+@font-face{font-family:MDSMono;src:url(fonts/spacemono.woff2) format('woff2');}
+@font-face{font-family:MDUnb;src:url(fonts/unbounded.woff2) format('woff2');font-weight:200 900;}
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden}
+.layer{position:absolute;inset:0;width:100%;height:100%}
+.word{line-height:.86;will-change:transform}
+/* font classes — pick ONE display + ONE text + ONE data family per video (see SKILL.md type pairings) */
+.f-wide{font-family:MDWide;font-weight:900;font-variation-settings:"wdth" 125,"wght" 900;text-transform:uppercase;letter-spacing:-.01em}
+.f-cond{font-family:MDWide;font-weight:900;font-variation-settings:"wdth" 62,"wght" 900;text-transform:uppercase}
+.f-anton{font-family:MDAnton;text-transform:uppercase;letter-spacing:-.005em;line-height:.9}
+.f-unb{font-family:MDUnb;font-weight:900;text-transform:uppercase;letter-spacing:-.03em}
+.f-grot{font-family:MDGrot;font-weight:500;letter-spacing:-.02em}
+.f-serif{font-family:MDSerif;font-style:italic;letter-spacing:-.01em}
+.f-mono{font-family:MDMono;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
+.f-smono{font-family:MDSMono;letter-spacing:.08em;text-transform:uppercase}
+.m{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .01em .06em}
+.m.nomask{overflow:visible}
+.l{display:inline-block;transform-origin:50% 100%;will-change:transform}
+/* HUD: corners */
+.hud{pointer-events:none;font-family:MDMono;font-size:15px;letter-spacing:.2em;text-transform:uppercase}
+.hud .br{position:absolute;width:20px;height:20px;border:0 solid var(--hud)}
+.hud .tl{left:44px;top:42px;border-left-width:2px;border-top-width:2px}.hud .tr{right:44px;top:42px;border-right-width:2px;border-top-width:2px}
+.hud .bl{left:44px;bottom:42px;border-left-width:2px;border-bottom-width:2px}.hud .brr{right:44px;bottom:42px;border-right-width:2px;border-bottom-width:2px}
+.hud .h{position:absolute;display:flex;gap:42px;align-items:center}.hud .h span{opacity:.55}
+.hud .tlx{left:80px;top:67px}.hud .trx{right:80px;top:67px}.hud .blx{left:80px;bottom:62px}.hud .brx{right:80px;bottom:62px;gap:26px}
+.hud #hq{display:flex;gap:6px}.hud #hq em{width:11px;height:11px;border:1.5px solid var(--hud);box-sizing:border-box}.hud #hq em.on{background:var(--hud)}
+/* HUD: ticker */
+.hud .tk-top{position:absolute;left:56px;top:48px;display:flex;gap:28px;font-family:MDSMono;font-size:17px;letter-spacing:.14em}
+.hud .tk-top span{opacity:.6}
+.hud .tk-tc{position:absolute;right:56px;top:48px;font-family:MDSMono;font-size:17px;letter-spacing:.1em;opacity:.8}
+.hud .tk-band{position:absolute;left:0;right:0;bottom:0;height:54px;border-top:1.5px solid var(--hud);overflow:hidden;display:flex;align-items:center}
+.hud .tk-run{white-space:nowrap;font-family:MDSMono;font-size:17px;letter-spacing:.14em;padding-left:56px;opacity:.85;flex:1}
+.hud .tk-meter{display:flex;align-items:flex-end;gap:4px;height:28px;padding:0 56px 0 24px;background:inherit}
+.hud .tk-meter em{width:5px;background:var(--hud)}

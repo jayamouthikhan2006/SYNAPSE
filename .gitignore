@@ -1,0 +1,12 @@
+node_modules/
+frontend/dist/
+backend/synapse.db*
+__pycache__/
+*.pyc
+ad/stills/
+ad/stills2/
+ad/*.parts/
+ad/track.wav
+ad/render.log
+ad/final_check.png
+.vercel/
