@@ -11,3 +11,5 @@ ad/final_check.png
 .vercel/
 backend/synapse.db-wal
 backend/synapse.db-shm
+
+.vercel
